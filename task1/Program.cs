@@ -2,7 +2,7 @@
 int number1 = int.Parse(Console.ReadLine());
 Console.Write("Введите второе число: ");
 int number2 = int.Parse(Console.ReadLine());
-if (number1 == number2 * number2)
+if (number2 == Math.Sqrt(number1)) // либо второй вариант number1 == Math.Pow(number2,2) 2 - это степень.
 {
     Console.WriteLine("Да!");
 }
