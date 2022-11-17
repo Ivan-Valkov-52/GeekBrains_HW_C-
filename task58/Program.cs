@@ -66,18 +66,15 @@ int InputNumber()
 
 int[,] MatrixMultiplication(int[,] arrayFirst, int[,] arraySecond)
 {
-    int sum = 0;
     int[,] resultArray = new int[arrayFirst.GetLength(0), arraySecond.GetLength(1)];
     for (int i = 0; i < resultArray.GetLength(0); i++)
     {
         for (int k = 0; k < resultArray.GetLength(1); k++)
         {
-            sum = 0;
             for (int j = 0; j < arrayFirst.GetLength(1); j++)
             {
-                sum = sum + (arrayFirst[i, j] * arraySecond[j, k]);
+                resultArray[i, k] += arrayFirst[i, j] * arraySecond[j, k];
             }
-            resultArray[i, k] = sum;
         }
     }
     return resultArray;

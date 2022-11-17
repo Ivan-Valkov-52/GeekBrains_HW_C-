@@ -10,20 +10,20 @@ int InputNumber()
     return num;
 }
 
-int SumDigitsNumbers(int num, int value)
+int SumDigitsNumbers(int num)
 {
     if (num <= 0)
     {
-        return value;
+        return 0;
     }
     else
     {
-        return SumDigitsNumbers(num / 10, value += num % 10);
+        return num % 10 + SumDigitsNumbers(num/10);
     }
 }
 
 Console.Write("Введите любое число N: ");
 int number = InputNumber();
 Console.Write($"Сумма цифр числа {number} = ");
-int sum = 0;
-Console.WriteLine(SumDigitsNumbers(number, sum));
+Console.WriteLine(SumDigitsNumbers(number));
+Console.ReadKey();
